@@ -1,4 +1,4 @@
-package Entity;
+package entity;
 
 import java.util.Date;
 
@@ -7,7 +7,6 @@ import java.util.Date;
  */
 public class Car {
     private String carMark;
-    private Driver carDriver;
     private String carNumber;
     private boolean isHaveBabySeat;
     private boolean isSmokeCar;
@@ -36,14 +35,6 @@ public class Car {
 
     public int getCarClass() {
         return carClass;
-    }
-
-    public Driver getCarDriver() {
-        return carDriver;
-    }
-
-    public void setCarDriver(Driver carDriver) {
-        this.carDriver = carDriver;
     }
 
     public boolean isHaveBabySeat() {
@@ -82,7 +73,6 @@ public class Car {
     public String toString() {
         return "Car{" +
                 "carMark='" + carMark + '\'' +
-                ", carDriver=" + carDriver +
                 ", carNumber='" + carNumber + '\'' +
                 ", isHaveBabySeat=" + isHaveBabySeat +
                 ", isSmokeCar=" + isSmokeCar +

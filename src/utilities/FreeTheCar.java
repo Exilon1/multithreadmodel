@@ -1,9 +1,7 @@
-package Utilities;
+package utilities;
 
-import Entity.Car;
-import storage.CarList;
+import entity.Car;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 

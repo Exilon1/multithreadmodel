@@ -1,6 +1,6 @@
-package Utilities;
+package utilities;
 
-import Entity.Order;
+import entity.Order;
 import exceptions.NotCompleteRequestException;
 import exceptions.NotValidCarClassException;
 import exceptions.UndetectableBabySeatParamException;

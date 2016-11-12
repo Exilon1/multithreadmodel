@@ -1,6 +1,6 @@
-package Utilities;
+package utilities;
 
-import Entity.*;
+import entity.*;
 
 import java.util.Date;
 import java.util.List;

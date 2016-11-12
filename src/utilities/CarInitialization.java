@@ -1,10 +1,9 @@
-package Utilities;
+package utilities;
 
-import Entity.Car;
-import Entity.Driver;
+import entity.Car;
+import entity.Driver;
 import storage.CarList;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -13,13 +12,13 @@ import java.util.stream.Stream;
 /**
  * Created by Alexey on 30.10.2016.
  */
-public class Initialization {
+public class CarInitialization {
 
     private static String allChars = "abcdefghijklmnopqrstuvwxyz";
     private static String[] carMarks = {"Bugatti", "Lamborghini", "Ferrari", "McLaren"};
 
     public static List<Car> initCarArray() {
-        return Stream.generate(Initialization::nextCar).limit(10).collect(Collectors.toCollection(CarList::getInstance));
+        return Stream.generate(CarInitialization::nextCar).limit(10).collect(Collectors.toCollection(CarList::getInstance));
     }
 
     private static int i=0;

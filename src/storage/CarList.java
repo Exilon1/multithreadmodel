@@ -1,6 +1,6 @@
 package storage;
 
-import Entity.Car;
+import entity.Car;
 
 import java.util.ArrayList;
 

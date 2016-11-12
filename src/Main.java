@@ -1,8 +1,6 @@
-import Entity.*;
-import Utilities.*;
+import entity.*;
+import utilities.*;
 
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,7 +9,7 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        List<Car> carList = Initialization.initCarArray();
+        List<Car> carList = CarInitialization.initCarArray();
         Scanner scanner = new Scanner(System.in);
 
         Runnable trede = new Runnable() {
