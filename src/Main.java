@@ -13,15 +13,13 @@ public class Main {
         List<Car> carList = Initialization.initCarList();
         Initialization.initDriverList();
         Initialization.initDriversByCars();
-
-        Storage storage = Storage.getInstance();
-        storage.getCarList().addAll(carList);
+        Initialization.initUserList();
 
         Scanner scanner = new Scanner(System.in);
-
+        String request = null;
 
         while (true) {
-            String request = scanner.nextLine();
+            request = scanner.nextLine();
 
             FreeTheCar.freeTheCar(carList);
             Order order = null;
