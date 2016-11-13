@@ -11,6 +11,9 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         List<Car> carList = Initialization.initCarList();
+        Initialization.initDriverList();
+        Initialization.initDriversByCars();
+
         Storage storage = Storage.getInstance();
         storage.getCarList().addAll(carList);
 

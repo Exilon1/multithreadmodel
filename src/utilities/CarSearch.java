@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import static utilities.Constants.TYPE_OF_STATUS_FREE;
+import static utilities.Constants.TYPE_OF_STATUS_RESERVED;
+
 /**
  * Created by Alexey on 30.10.2016.
  */
@@ -21,7 +24,7 @@ public class CarSearch {
                 break;
             }
         }
-        car.setCarStatus(Car.TYPE_OF_STATUS_RESERVED);
+        car.setCarStatus(TYPE_OF_STATUS_RESERVED);
         car.setReservedTime(new Date(System.currentTimeMillis() + random.nextInt(15)*10000));
         return car;
     }
@@ -30,7 +33,7 @@ public class CarSearch {
         boolean isSuitableCar = car.getCarClass()==order.getNeedCarClass() &&
                                 car.isHaveBabySeat()==order.isNeedBabySeat() &&
                                 car.isSmokeCar()==order.isNeedSmokeCar() &&
-                                car.getCarStatus().equals(Car.TYPE_OF_STATUS_FREE);
+                                car.getCarStatus().equals(TYPE_OF_STATUS_FREE);
         return isSuitableCar;
     }
 }

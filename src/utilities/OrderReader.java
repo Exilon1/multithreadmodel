@@ -6,6 +6,9 @@ import exceptions.NotValidCarClassException;
 import exceptions.UndetectableBabySeatParamException;
 import exceptions.UndetectableSmokeCarParamException;
 
+import static utilities.Constants.NO_PARAM;
+import static utilities.Constants.YES_PARAM;
+
 /**
  * Created by Alexey on 30.10.2016.
  */
@@ -26,17 +29,17 @@ public class OrderReader {
         String[] params = request.split("\\|");
         if (params.length<5)
             throw new NotCompleteRequestException();
-        if (!"yes".equals(params[2].toLowerCase()) && !"no".equals(params[2].toLowerCase()))
+        if (!YES_PARAM.equals(params[2].toLowerCase()) && !NO_PARAM.equals(params[2].toLowerCase()))
             throw new UndetectableBabySeatParamException();
-        if (!"yes".equals(params[3].toLowerCase()) && !"no".equals(params[3].toLowerCase()))
+        if (!YES_PARAM.equals(params[3].toLowerCase()) && !NO_PARAM.equals(params[3].toLowerCase()))
             throw new UndetectableSmokeCarParamException();
         if (!Integer.toString(0).equals(params[4]) && !Integer.toString(1).equals(params[4]))
             throw new NotValidCarClassException();
 
         String startPoint = params[0];
         String endPoint = params[1];
-        boolean isNeedBabySeat = "yes".equals(params[2].toLowerCase());
-        boolean isNeedSmokeCar = "yes".equals(params[3].toLowerCase());
+        boolean isNeedBabySeat = YES_PARAM.equals(params[2].toLowerCase());
+        boolean isNeedSmokeCar = YES_PARAM.equals(params[3].toLowerCase());
         int needCarClass = Integer.valueOf(params[4]);
 
         return new Order(startPoint, endPoint, isNeedBabySeat, isNeedSmokeCar, needCarClass);

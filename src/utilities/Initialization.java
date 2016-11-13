@@ -15,11 +15,7 @@ import java.util.stream.Stream;
  */
 public class Initialization {
 
-    private static String allChars = "abcdefghijklmnopqrstuvwxyz";
-    private static String[] carMarks = {"Bugatti", "Lamborghini", "Ferrari", "McLaren"};
-
     private static Storage storage = Storage.getInstance();
-
 
     public static List<Car> initCarList() {
         storage.getCarList().addAll(
