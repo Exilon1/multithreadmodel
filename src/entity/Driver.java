@@ -6,19 +6,12 @@ package entity;
 public class Driver {
 
     private String name;
-    private String telephone;
+    private String phoneNumber;
     private Car car;
+
 
     public Driver(String name) {
         this.name = name;
-    }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
     }
 
     public String getName() {
@@ -29,19 +22,27 @@ public class Driver {
         this.name = name;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     @Override
     public String toString() {
         return "Driver{" +
                 "name='" + name + '\'' +
-                ", telephone='" + telephone + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
     }
 }

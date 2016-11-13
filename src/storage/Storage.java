@@ -2,6 +2,7 @@ package storage;
 
 import entity.Car;
 import entity.Driver;
+import entity.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,15 +23,19 @@ public class Storage {
         return Storage.SingletonHelper.SINGLETON;
     }
 
-    private static List<Car> carList = new ArrayList<Car>();
-    private static List<Driver> driverList = new ArrayList<Driver>();
-  //  private List<User> carList = new ArrayList<User>();
+    private List<Car> carList = new ArrayList<Car>();
+    private List<Driver> driverList = new ArrayList<Driver>();
+    private List<User> userList = new ArrayList<User>();
 
-    public static List<Car> getCarList() {
+    public List<Car> getCarList() {
         return carList;
     }
 
-    public static List<Driver> getDriverList() {
+    public List<Driver> getDriverList() {
         return driverList;
+    }
+
+    public List<User> getUserList() {
+        return userList;
     }
 }

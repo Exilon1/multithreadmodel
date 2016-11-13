@@ -13,7 +13,7 @@ public class CarSearch {
 
     static Random random = new Random();
 
-    public synchronized static Car searchFreeCar(List<Car> carArrayList, Order order) {
+    public static Car searchFreeCar(List<Car> carArrayList, Order order) {
         Car car = null;
         for(Car c: carArrayList) {
             if (isSuitableCar(c, order)) {

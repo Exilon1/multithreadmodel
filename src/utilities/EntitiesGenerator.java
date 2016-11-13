@@ -2,28 +2,21 @@ package utilities;
 
 import entity.Car;
 import entity.Driver;
-import storage.CarList;
+import entity.User;
 
-import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
- * Created by Alexey on 30.10.2016.
+ * Created by Alexey on 13.11.2016.
  */
-public class CarInitialization {
+public class EntitiesGenerator {
 
     private static String allChars = "abcdefghijklmnopqrstuvwxyz";
     private static String[] carMarks = {"Bugatti", "Lamborghini", "Ferrari", "McLaren"};
 
-    public static List<Car> initCarArray() {
-        return Stream.generate(CarInitialization::nextCar).limit(10).collect(Collectors.toCollection(CarList::getInstance));
-    }
-
     private static int i=0;
     private static Random random = new Random();
-    private static Car nextCar() {
+    public static Car nextCar() {
         boolean isSmokeCar = random.nextBoolean();
         boolean isHaveBabySeat = random.nextBoolean();
         String carNumber = allChars.charAt(random.nextInt(allChars.length())) +
@@ -44,17 +37,24 @@ public class CarInitialization {
         car.setSmokeCar(isSmokeCar);
         car.setHaveBabySeat(isHaveBabySeat);
         car.setCarStatus(Car.TYPE_OF_STATUS_FREE);
-        car.setCarDriver(nextDriver());
         return car;
     }
 
     private static int j=1;
-    private static Driver nextDriver() {
+    public static Driver nextDriver() {
         Driver driver = new Driver("Driver name " + j);
         j++;
-        String telephone = Integer.toString(((random.nextInt(9)+1)*100 + random.nextInt(100))*1000);
-        driver.setTelephone(telephone);
+        String phoneNumber = Integer.toString(((random.nextInt(9)+1)*100 + random.nextInt(100))*1000);
+        driver.setPhoneNumber(phoneNumber);
         return driver;
+    }
+
+    private static int k=0;
+    public static User nextUser() {
+        String phoneNumber = Integer.toString(((random.nextInt(9)+1)*100 + random.nextInt(100))*1000);
+        User user = new User(k, phoneNumber, 0);
+        k++;
+        return user;
     }
 
 }

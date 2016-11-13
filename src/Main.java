@@ -1,4 +1,5 @@
 import entity.*;
+import storage.Storage;
 import utilities.*;
 
 import java.util.List;
@@ -9,34 +10,31 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        List<Car> carList = CarInitialization.initCarArray();
+        List<Car> carList = Initialization.initCarList();
+        Storage storage = Storage.getInstance();
+        storage.getCarList().addAll(carList);
+
         Scanner scanner = new Scanner(System.in);
 
-        Runnable trede = new Runnable() {
-            public void run() //Этот метод будет выполняться в побочном потоке
-            {
-                while (true) {
-                    String request = scanner.nextLine();
 
-                    FreeTheCar.freeTheCar(carList);
-                    Order order = null;
-                    try {
-                        order = OrderReader.orderRead(request);
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                        continue;
-                    }
-                    Car car = CarSearch.searchFreeCar(carList, order);
-                    if (car == null) {
-                        System.out.println("All cars are reserved. Please, try again later.");
-                        continue;
-                    }
-                    System.out.println("Your car:");
-                    System.out.println(car);
-                }
+        while (true) {
+            String request = scanner.nextLine();
+
+            FreeTheCar.freeTheCar(carList);
+            Order order = null;
+            try {
+                order = OrderReader.orderRead(request);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                continue;
             }
-        };
-        trede.run();
-
+            Car car = CarSearch.searchFreeCar(carList, order);
+            if (car == null) {
+                System.out.println("All cars are reserved. Please, try again later.");
+                continue;
+            }
+            System.out.println("Your car:");
+            System.out.println(car);
+        }
     }
 }
