@@ -20,7 +20,7 @@ public class Main {
 
         while (true) {
             request = scanner.nextLine();
-
+// changes
             FreeTheCar.freeTheCar(carList);
             Order order = null;
             try {
