@@ -3,6 +3,8 @@ import storage.Storage;
 import utilities.*;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 /**
@@ -17,10 +19,28 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         String request = null;
+        ResourceBundle bundle;
+
+
+        System.out.println("Введите локаль ru или en");
+        /*
+         * Домашнее задание с локалями:
+         *
+         */
+        request = scanner.nextLine();
+        if("en".equals(request)) {
+            bundle = ResourceBundle.getBundle("resources.prop", new Locale("en", "UK"));
+            System.out.println(bundle.getString("prop.key"));
+        } else if("ru".equals(request)) {
+            bundle = ResourceBundle.getBundle("resources.prop", new Locale("ru", "RU"));
+            System.out.println(bundle.getString("prop.key"));
+        }
+
 
         while (true) {
+
             request = scanner.nextLine();
-// changes
+
             FreeTheCar.freeTheCar(carList);
             Order order = null;
             try {
