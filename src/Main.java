@@ -36,6 +36,9 @@ public class Main {
             System.out.println(bundle.getString("prop.key"));
         }
 
+        System.out.println("Формат ввода:");
+        System.out.println("г. Тольятти, ул. Мира, д. 106, п. 2/г. Тольятти, ул. Мира, д. 106, п. 2/yes/yes/1");
+
 
         while (true) {
 
