@@ -21,11 +21,11 @@ public class CarSearch {
         for(Car c: carArrayList) {
             if (isSuitableCar(c, order)) {
                 car = c;
+                car.setCarStatus(TYPE_OF_STATUS_RESERVED);
+                car.setReservedTime(new Date(System.currentTimeMillis() + random.nextInt(15)*10000));
                 break;
             }
         }
-        car.setCarStatus(TYPE_OF_STATUS_RESERVED);
-        car.setReservedTime(new Date(System.currentTimeMillis() + random.nextInt(15)*10000));
         return car;
     }
 

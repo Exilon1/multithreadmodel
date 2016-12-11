@@ -25,7 +25,7 @@ public class OrderReader {
     }
 
 
-    private static final String ADRESS_REGEX = "[г].\\s[А-Я][а-я]+,\\sул.\\s[А-Я][а-я]+,\\sд.\\s[1-9][0-9]*(,\\sп.\\s[1-9])?";
+    private static final String ADRESS_REGEX = "ул.\\s[А-Я][а-я]+,\\sд.\\s[1-9][0-9]*(,\\sп.\\s[1-9])?";
     // г. Тольятти, ул. Мира, д. 106, п. 2
 
     public static Order orderRead(String request) throws Exception {
