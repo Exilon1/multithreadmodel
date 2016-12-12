@@ -1,6 +1,5 @@
 import entity.*;
 import storage.MyLinkedList;
-import storage.Storage;
 import utilities.*;
 
 import java.util.*;
@@ -19,8 +18,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String request = null;
         ResourceBundle bundle;
-        Random random = new Random();
-
 
         System.out.println("Введите локаль ru или en");
         /*
@@ -50,17 +47,17 @@ public class Main {
             try {
                 order = OrderReader.orderRead(request);
                 orderList.add(order);
-                car = CarSearch.searchFreeCar(carList, orderList.get(random.nextInt(orderList.size()-1)));
+                car = CarSearch.searchFreeCar(carList, order);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 continue;
             }
 
             if (car == null) {
+                orderList.add(order);
                 System.out.println("All cars are reserved. Please, try again later.");
                 continue;
             }
-            orderList.remove(order);
             System.out.println("Your car:");
             System.out.println(car);
         }
