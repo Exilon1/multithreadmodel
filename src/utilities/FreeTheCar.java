@@ -5,8 +5,8 @@ import entity.Car;
 import java.util.Date;
 import java.util.List;
 
-import static utilities.Constants.TYPE_OF_STATUS_FREE;
-import static utilities.Constants.TYPE_OF_STATUS_RESERVED;
+import static utilities.constants.Constants.TYPE_OF_STATUS_FREE;
+import static utilities.constants.Constants.TYPE_OF_STATUS_RESERVED;
 
 /**
  * Created by Nikotin on 03.11.2016.

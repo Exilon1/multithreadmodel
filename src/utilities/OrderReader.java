@@ -6,7 +6,7 @@ import exceptions.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static utilities.Constants.*;
+import static utilities.constants.Constants.*;
 
 /**
  * Created by Alexey on 30.10.2016.
@@ -24,7 +24,8 @@ public class OrderReader {
         return SingletonHelper.SINGLETON;
     }
 
-
+    private static final String YES_PARAM = "yes";
+    private static final String NO_PARAM = "no";
     private static final String ADRESS_REGEX = "ул.\\s[А-Я][а-я]+,\\sд.\\s[1-9][0-9]*(,\\sп.\\s[1-9])?";
     // г. Тольятти, ул. Мира, д. 106, п. 2
 

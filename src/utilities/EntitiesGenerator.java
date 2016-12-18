@@ -3,10 +3,12 @@ package utilities;
 import entity.Car;
 import entity.Driver;
 import entity.User;
+import utilities.constants.CarMark;
 
+import java.util.Arrays;
 import java.util.Random;
 
-import static utilities.Constants.*;
+import static utilities.constants.Constants.*;
 
 /**
  * Created by Alexey on 13.11.2016.
@@ -14,6 +16,8 @@ import static utilities.Constants.*;
 public class EntitiesGenerator {
 
     private static int i=0;
+    private static final String ALL_CHARS = "abcdefghijklmnopqrstuvwxyz";
+
     private static Random random = new Random();
     public static Car nextCar() {
         boolean isSmokeCar = random.nextBoolean();
@@ -23,7 +27,8 @@ public class EntitiesGenerator {
 
         if ( i>3 )
             i = 0;
-        String carMark = CAR_MARKS[i];
+    //    String carMark = CAR_MARKS[i];
+        String carMark = Arrays.stream(CarMark.values()).forEach(Enum::name);
         i++;
 
         int carClass;

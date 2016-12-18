@@ -6,8 +6,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import static utilities.Constants.TYPE_OF_STATUS_FREE;
-import static utilities.Constants.TYPE_OF_STATUS_RESERVED;
+import static utilities.constants.Constants.TYPE_OF_STATUS_FREE;
+import static utilities.constants.Constants.TYPE_OF_STATUS_RESERVED;
 
 /**
  * Created by Alexey on 30.10.2016.
