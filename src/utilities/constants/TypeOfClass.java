@@ -5,5 +5,15 @@ package utilities.constants;
  */
 public enum TypeOfClass {
 
-    BUSYNESS, ECONOMIC
+    BUSYNESS(1), ECONOMIC(0);
+
+    private int carClass;
+
+    TypeOfClass(int carClass) {
+        this.carClass = carClass;
+    }
+
+    public int getCarClass() {
+        return carClass;
+    }
 }

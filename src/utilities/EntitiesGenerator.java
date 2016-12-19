@@ -4,9 +4,11 @@ import entity.Car;
 import entity.Driver;
 import entity.User;
 import utilities.constants.CarMark;
+import utilities.constants.TypeOfClass;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.stream.Stream;
 
 import static utilities.constants.Constants.*;
 
@@ -27,17 +29,16 @@ public class EntitiesGenerator {
 
         if ( i>3 )
             i = 0;
-    //    String carMark = CAR_MARKS[i];
-        String carMark = Arrays.stream(CarMark.values()).forEach(Enum::name);
+        CarMark carMark = CarMark.values()[i];
         i++;
 
         int carClass;
         if (i%2==0)
-            carClass = TYPE_OF_CLASS_ECONOMIC;
-        else carClass = TYPE_OF_CLASS_BUSYNESS;
+            carClass = TypeOfClass.ECONOMIC.getCarClass();
+        else carClass = TypeOfClass.BUSYNESS.getCarClass();
 
 
-        Car car = new Car(carMark, carNumber, carClass);
+        Car car = new Car(carMark.getMark(), carNumber, carClass);
         car.setSmokeCar(isSmokeCar);
         car.setHaveBabySeat(isHaveBabySeat);
         car.setCarStatus(TYPE_OF_STATUS_FREE);

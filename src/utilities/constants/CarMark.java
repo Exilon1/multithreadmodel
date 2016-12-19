@@ -5,5 +5,15 @@ package utilities.constants;
  */
 public enum CarMark {
 
-    BUGATTI, LAMBIRGHINI, FERRARI, MCLAREN
+    BUGATTI("Bugatti"), LAMBIRGHINI("Lamborghini"), FERRARI("Ferrari"), MCLAREN("McLaren");
+
+    private String name;
+
+    CarMark(String name) {
+        this.name = name;
+    }
+
+    public String getMark() {
+        return name;
+    }
 }
