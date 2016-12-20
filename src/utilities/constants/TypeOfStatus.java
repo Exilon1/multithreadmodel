@@ -5,5 +5,15 @@ package utilities.constants;
  */
 public enum TypeOfStatus {
 
-    FREE, RESERVED
+    FREE("Свободен"), RESERVED("Занят");
+
+    private String status;
+
+    TypeOfStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
+    }
 }

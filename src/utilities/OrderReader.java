@@ -2,6 +2,7 @@ package utilities;
 
 import entity.Order;
 import exceptions.*;
+import utilities.constants.TypeOfClass;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -39,7 +40,7 @@ public class OrderReader {
             throw new UndetectableBabySeatParamException();
         if (!YES_PARAM.equals(params[3].toLowerCase()) && !NO_PARAM.equals(params[3].toLowerCase()))
             throw new UndetectableSmokeCarParamException();
-        if (!Integer.toString(TYPE_OF_CLASS_ECONOMIC).equals(params[4]) && !Integer.toString(TYPE_OF_CLASS_BUSYNESS).equals(params[4]))
+        if (!Integer.toString(TypeOfClass.ECONOMIC.getCarClass()).equals(params[4]) && !Integer.toString(TypeOfClass.BUSYNESS.getCarClass()).equals(params[4]))
             throw new NotValidCarClassException();
 
         String startPoint = params[0];

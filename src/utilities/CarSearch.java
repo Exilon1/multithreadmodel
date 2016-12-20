@@ -1,13 +1,12 @@
 package utilities;
 
 import entity.*;
+import utilities.constants.TypeOfStatus;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import static utilities.constants.Constants.TYPE_OF_STATUS_FREE;
-import static utilities.constants.Constants.TYPE_OF_STATUS_RESERVED;
 
 /**
  * Created by Alexey on 30.10.2016.
@@ -21,7 +20,7 @@ public class CarSearch {
         for(Car c: carArrayList) {
             if (isSuitableCar(c, order)) {
                 car = c;
-                car.setCarStatus(TYPE_OF_STATUS_RESERVED);
+                car.setCarStatus(TypeOfStatus.RESERVED.getStatus());
                 car.setReservedTime(new Date(System.currentTimeMillis() + random.nextInt(15)*10000));
                 break;
             }
@@ -33,7 +32,7 @@ public class CarSearch {
         boolean isSuitableCar = car.getCarClass()==order.getNeedCarClass() &&
                                 car.isHaveBabySeat()==order.isNeedBabySeat() &&
                                 car.isSmokeCar()==order.isNeedSmokeCar() &&
-                                car.getCarStatus().equals(TYPE_OF_STATUS_FREE);
+                                car.getCarStatus().equals(TypeOfStatus.FREE.getStatus());
         return isSuitableCar;
     }
 }

@@ -5,6 +5,7 @@ import entity.Driver;
 import entity.User;
 import utilities.constants.CarMark;
 import utilities.constants.TypeOfClass;
+import utilities.constants.TypeOfStatus;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -41,7 +42,7 @@ public class EntitiesGenerator {
         Car car = new Car(carMark.getMark(), carNumber, carClass);
         car.setSmokeCar(isSmokeCar);
         car.setHaveBabySeat(isHaveBabySeat);
-        car.setCarStatus(TYPE_OF_STATUS_FREE);
+        car.setCarStatus(TypeOfStatus.FREE.getStatus());
         return car;
     }
 

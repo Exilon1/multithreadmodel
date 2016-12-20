@@ -1,5 +1,5 @@
 # ru.goldtaxi
 
-Добавлена реализация MyLinkedList
+Добавлен enum типы в пакете utilities/constants
 
 
