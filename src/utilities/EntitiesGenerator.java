@@ -7,11 +7,8 @@ import utilities.constants.CarMark;
 import utilities.constants.TypeOfClass;
 import utilities.constants.TypeOfStatus;
 
-import java.util.Arrays;
 import java.util.Random;
-import java.util.stream.Stream;
 
-import static utilities.constants.Constants.*;
 
 /**
  * Created by Alexey on 13.11.2016.
