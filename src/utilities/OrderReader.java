@@ -7,7 +7,6 @@ import utilities.constants.TypeOfClass;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static utilities.constants.Constants.*;
 
 /**
  * Created by Alexey on 30.10.2016.
