@@ -1,5 +1,6 @@
 import entity.*;
 import storage.MyLinkedList;
+import treades.OrderEmulator;
 import treades.WaitingCarThread;
 import utilities.*;
 
@@ -19,7 +20,7 @@ public class Main {
         String request = null;
         ResourceBundle bundle;
 
-        System.out.println("Введите локаль ru или en");
+ //       System.out.println("Введите локаль ru или en");
 
  /*         request = scanner.nextLine();
         if("en".equals(request)) {
@@ -33,7 +34,7 @@ public class Main {
         System.out.println("Формат ввода:");
         System.out.println("ул. Мира, д. 106, п. 2/ул. Мира, д. 106, п. 2/yes/yes/1");
 
-
+        new Thread(new OrderEmulator()).start();
         while (true) {
 
             request = scanner.nextLine();
