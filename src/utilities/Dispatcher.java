@@ -15,7 +15,7 @@ public class Dispatcher {
 
     static Random random = new Random();
 
-    public synchronized static Car searchFreeCar(List<Car> carArrayList, Order order) {
+    public static Car searchFreeCar(List<Car> carArrayList, Order order) {
         Car car = null;
         for(Car c: carArrayList) {
             if (isSuitableCar(c, order)) {
@@ -30,10 +30,12 @@ public class Dispatcher {
 
 
     private static boolean isSuitableCar(Car car, Order order) {
-        boolean isSuitableCar = car.getCarClass()==order.getNeedCarClass() &&
-                car.isHaveBabySeat()==order.isNeedBabySeat() &&
-                car.isSmokeCar()==order.isNeedSmokeCar() &&
-                car.getCarStatus().equals(TypeOfStatus.FREE.getStatus());
-        return isSuitableCar;
+        synchronized (car) {
+            boolean isSuitableCar = car.getCarClass() == order.getNeedCarClass() &&
+                    car.isHaveBabySeat() == order.isNeedBabySeat() &&
+                    car.isSmokeCar() == order.isNeedSmokeCar() &&
+                    car.getCarStatus().equals(TypeOfStatus.FREE.getStatus());
+            return isSuitableCar;
+        }
     }
 }
