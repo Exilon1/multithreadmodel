@@ -3,7 +3,7 @@ package treades;
 import entity.Car;
 import entity.Order;
 import storage.Storage;
-import utilities.CarSearch;
+import utilities.Dispatcher;
 
 import java.util.List;
 
@@ -19,16 +19,26 @@ public class WaitingCarThread implements Runnable {
         this.order = order;
     }
 
+    Car car;
+
     @Override
     public void run() {
-        Car car = CarSearch.searchFreeCar(carList, order);
-        if(car==null)
+        car = Dispatcher.searchFreeCar(carList, order);
+        if(car==null) {
             try {
                 Thread.sleep(15000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-
+            car = Dispatcher.searchFreeCar(carList, order);
+            if(car==null) {
+                System.out.println("All cars are reserved. Please, try again later.");
+                return;
+            }
+            System.out.println("Ожидайте машину:");
+            System.out.println(car.getCarMark() + ", nunber " + car.getCarNumber());
+        }
+        System.out.println("Ожидайте машину:");
+        System.out.println(car.getCarMark() + ", nunber " + car.getCarNumber());
     }
 }

@@ -20,6 +20,5 @@ public class FreeTheCar {
                 c.setReservedTime(null);
             }
         }
-
     }
 }
