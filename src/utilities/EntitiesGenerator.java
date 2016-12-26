@@ -2,6 +2,7 @@ package utilities;
 
 import entity.Car;
 import entity.Driver;
+import entity.Order;
 import entity.User;
 import utilities.constants.CarMark;
 import utilities.constants.TypeOfClass;
