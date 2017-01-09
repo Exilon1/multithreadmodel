@@ -4,15 +4,13 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<Product> list = new ArrayList<>();
-        list.add(new Product());
-        list.add(new Product());
-        list.add(0,null);
-        list.remove(null);
-        System.out.println(list.contains(null));
-        for (Product p: list) {
-            System.out.println(p);
-        }
+        CollectionForThreads collectionForThreads = new CollectionForThreads();
+        List<Runnable> list = new ArrayList<>(3);
 
+        new Producer("Производитель", collectionForThreads);
+        list.add(new Consumer("1", collectionForThreads));
+        list.add(new Consumer("2", collectionForThreads));
+        list.add(new Consumer("3", collectionForThreads));
+        new Dispatcher(list, collectionForThreads);
     }
 }
